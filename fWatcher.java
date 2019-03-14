@@ -31,15 +31,15 @@ public class fWatcher extends Thread {
 			List<WatchEvent<?>> events = wKey.pollEvents();
 
 			for (WatchEvent<?> event : events) {
-	            if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY) {
-	            	eventFName = event.context().toString();
-	            	actionFunction();
-	            }
-	        }
-	    	if(!wKey.reset()) {
-                try { wService.close(); } 
-                catch (IOException e) { e.printStackTrace(); }
-            }*/
+				if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY) {
+	            			eventFName = event.context().toString();
+	            			actionFunction();
+	            		}
+			}
+	    		if(!wKey.reset()) {
+                		try { wService.close(); } 
+                		catch (IOException e) { e.printStackTrace(); }
+            		}*/
 			System.out.println("wait");
 		}
 	}
